@@ -12,20 +12,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://clawfleet.io/">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="ClawFleet — Your AI Bots Collaborate in Discord. No SaaS Fees.">
     <meta property="og:description" content="Stop paying $20/month for XXXClaw. Run your own AI fleet on your Mac — bots that @ each other, divide tasks, and report back. Managed from a browser dashboard.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clawfleet.io">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ClawFleet — AI Bots That Collaborate. Self-Hosted. Free.">
     <meta name="twitter:description" content="Your AI bots @ each other in Discord, divide tasks, and report back. No SaaS subscription, no cloud. Just your Mac.">
     <meta property="og:image" content="https://clawfleet.io/demo-discord.jpeg">
     <meta name="twitter:image" content="https://clawfleet.io/demo-discord.jpeg">
 
-    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -35,15 +31,10 @@
         "url": "https://clawfleet.io",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "macOS, Linux",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT"
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -51,144 +42,137 @@
         "name": "ClawFleet",
         "url": "https://clawfleet.io",
         "logo": "https://clawfleet.io/favicon.svg",
-        "sameAs": [
-            "https://github.com/weiyong1024/ClawFleet",
-            "https://discord.gg/b5ZSRyrqbt"
-        ]
+        "sameAs": ["https://github.com/weiyong1024/ClawFleet", "https://discord.gg/b5ZSRyrqbt"]
     }
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: #0F1424;
-            color: #C8CDD8;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #0f172b 0%, #1d293d 50%, #0f172b 100%);
+            background-attachment: fixed;
+            color: #cad5e2;
             line-height: 1.6;
         }
 
-        /* ── Nav ─────────────────────────────────────────── */
+        /* ── Nav ─────────────────────────────────────── */
         nav {
             position: sticky;
             top: 0;
             z-index: 100;
+            background: #0f172b;
+            padding: 0 calc((100% - 1036px) / 2);
+            height: 69px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem 2rem;
-            background: rgba(15, 20, 36, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #1E2540;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
             text-decoration: none;
         }
 
-        .nav-logo svg { flex-shrink: 0; }
-
-        .nav-actions {
-            display: flex;
-            gap: 0.75rem;
-        }
+        .nav-actions { display: flex; gap: 0.625rem; }
 
         .nav-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            padding: 0.5rem 1rem;
+            padding: 0 1rem;
+            height: 36px;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 14px;
             font-weight: 500;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: opacity 0.2s;
         }
+
+        .nav-btn:hover { opacity: 0.85; }
 
         .nav-btn-outline {
-            color: #C8CDD8;
-            border: 1px solid #2A2F45;
-            background: transparent;
+            color: #ffffff;
+            background: #141a36;
+            border: 1px solid #45556c;
         }
-
-        .nav-btn-outline:hover { border-color: #4A5070; }
 
         .nav-btn-primary {
-            color: #fff;
-            background: #5865F2;
-            border: 1px solid #5865F2;
+            color: #ffffff;
+            background: #155dfc;
+            border: none;
         }
 
-        .nav-btn-primary:hover { background: #4752C4; }
-
-        /* ── Sections ────────────────────────────────────── */
-        .section {
-            max-width: 960px;
+        /* ── Sections ────────────────────────────────── */
+        .wrap {
+            max-width: 992px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
-        .section-wide {
-            max-width: 1060px;
-        }
-
-        /* ── Hero ────────────────────────────────────────── */
+        /* ── Hero ────────────────────────────────────── */
         .hero {
             text-align: center;
-            padding: 5rem 2rem 4rem;
+            padding: 80px 0 60px;
         }
 
         .badge {
             display: inline-block;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 2px 12px;
+            border-radius: 8px;
+            font-size: 12px;
             font-weight: 500;
-            color: #FBBF24;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.25);
-            margin-bottom: 1.25rem;
+            color: #fdc700;
+            background: rgba(253, 199, 0, 0.12);
+            border: 1px solid rgba(253, 199, 0, 0.3);
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 48px;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #818CF8, #C4B5FD, #A78BFA);
+            letter-spacing: 0.35px;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #51a2ff 0%, #c27aff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: 1.35rem;
-            color: #E2E8F0;
+            font-size: 24px;
             font-weight: 400;
-            margin-bottom: 0.75rem;
-            max-width: 480px;
+            color: #cad5e2;
+            margin-bottom: 12px;
+            max-width: 472px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hero-desc {
-            font-size: 1rem;
-            color: #8892A8;
-            margin-bottom: 2rem;
-            max-width: 460px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #90a1b9;
+            margin-bottom: 32px;
+            max-width: 472px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hero-cta {
             display: flex;
-            gap: 0.75rem;
+            gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -196,262 +180,260 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.5rem;
+            gap: 8px;
+            height: 52px;
+            padding: 0 24px;
             border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 16px;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.2s;
         }
 
         .btn-white {
-            background: #fff;
-            color: #0B0F1A;
+            background: #ffffff;
+            color: #0a0a0a;
         }
 
-        .btn-white:hover { background: #E2E8F0; transform: translateY(-1px); }
+        .btn-white:hover { background: #e2e8f0; transform: translateY(-1px); }
 
         .btn-outline {
             background: transparent;
-            color: #C8CDD8;
-            border: 1px solid #2A2F45;
+            color: #e0e0e0;
+            border: 1px solid #314158;
         }
 
-        .btn-outline:hover { border-color: #4A5070; transform: translateY(-1px); }
+        .btn-outline:hover { border-color: #45556c; transform: translateY(-1px); }
 
-        /* ── Pain Point Cards ────────────────────────────── */
+        /* ── Pain Point Cards ────────────────────────── */
         .pain-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            padding: 0 2rem 3rem;
-            max-width: 960px;
-            margin: 0 auto;
+            gap: 24px;
+            padding-bottom: 64px;
         }
 
         .pain-card {
-            background: #161B2E;
-            border: 1px solid #1E2540;
+            background: #1d293d;
+            border: 1px solid #314158;
             border-radius: 14px;
-            padding: 1.75rem;
-        }
-
-        .pain-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
+            padding: 25px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 296px;
         }
 
-        .pain-icon-yellow { background: rgba(251, 191, 36, 0.12); color: #FBBF24; }
-        .pain-icon-green { background: rgba(52, 211, 153, 0.12); color: #34D399; }
-        .pain-icon-red { background: rgba(248, 113, 113, 0.12); color: #F87171; }
+        .pain-card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 14px;
+        }
+
+        .pain-card-icon.ic-yellow { color: #fdc700; }
+        .pain-card-icon.ic-green { color: #05df72; }
+        .pain-card-icon.ic-red { color: #ff6467; }
 
         .pain-card h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
-
-        .pain-card h3.c-yellow { color: #FBBF24; }
-        .pain-card h3.c-green { color: #34D399; }
-        .pain-card h3.c-red { color: #F87171; }
 
         .pain-card p {
-            font-size: 0.85rem;
-            color: #8892A8;
-            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 400;
+            color: #90a1b9;
+            line-height: 1.5;
         }
 
-        /* ── Demo Sections ───────────────────────────────── */
+        /* ── Demo Sections ───────────────────────────── */
         .demo {
             text-align: center;
-            padding: 3rem 2rem 4rem;
-            max-width: 960px;
-            margin: 0 auto;
+            padding: 48px 0 64px;
         }
 
         .demo-icon {
             width: 48px;
             height: 48px;
-            margin: 0 auto 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #818CF8;
+            margin: 0 auto 20px;
         }
 
+        .demo-icon.ic-blue { color: #51a2ff; }
+        .demo-icon.ic-purple { color: #c27aff; }
+
         .demo h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 0.75rem;
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
         }
 
         .demo-desc {
-            font-size: 1rem;
-            color: #8892A8;
+            font-size: 18px;
+            font-weight: 400;
+            color: #cad5e2;
             max-width: 620px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 32px;
         }
 
         .demo-frame {
-            background: #161B2E;
-            border: 1px solid #1E2540;
-            border-radius: 14px;
+            border: 1px solid #314158;
+            border-radius: 10px;
             overflow: hidden;
         }
 
         .demo-frame img {
             width: 100%;
             display: block;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .demo-caption-wrap {
+            margin-top: 20px;
         }
 
         .demo-caption {
-            font-size: 0.8rem;
-            color: #5A6380;
-            padding: 1rem;
-            border-top: 1px solid #1E2540;
+            background: #1d293d;
+            border: 1px solid #314158;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #90a1b9;
+            padding: 17px 16px;
             text-align: center;
         }
 
-        /* ── Feature Tiles ───────────────────────────────── */
+        /* ── Feature Tiles ───────────────────────────── */
         .features-section {
             text-align: center;
-            padding: 3rem 2rem 4rem;
-            max-width: 960px;
-            margin: 0 auto;
+            padding: 48px 0 64px;
         }
 
         .features-section h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 2.5rem;
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 48px;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
+            gap: 24px;
             text-align: left;
         }
 
         .tile {
-            background: #161B2E;
-            border: 1px solid #1E2540;
+            background: #1d293d;
+            border: 1px solid #314158;
             border-radius: 14px;
-            padding: 1.5rem;
+            padding: 25px;
         }
 
         .tile-icon {
             width: 40px;
             height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0.9rem;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
         }
 
-        .tile-icon-yellow { background: rgba(251, 191, 36, 0.12); color: #FBBF24; }
-        .tile-icon-green { background: rgba(52, 211, 153, 0.12); color: #34D399; }
-        .tile-icon-blue { background: rgba(96, 165, 250, 0.12); color: #60A5FA; }
-        .tile-icon-orange { background: rgba(251, 146, 60, 0.12); color: #FB923C; }
-        .tile-icon-red { background: rgba(248, 113, 113, 0.12); color: #F87171; }
-        .tile-icon-purple { background: rgba(167, 139, 250, 0.12); color: #A78BFA; }
+        .tile-icon.ic-blue { color: #51a2ff; }
+        .tile-icon.ic-green { color: #05df72; }
+        .tile-icon.ic-purple { color: #c27aff; }
+        .tile-icon.ic-yellow { color: #fdc700; }
+        .tile-icon.ic-red { color: #ff6467; }
+        .tile-icon.ic-orange { color: #ff8904; }
 
         .tile h3 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #E2E8F0;
-            margin-bottom: 0.5rem;
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
 
         .tile p {
-            font-size: 0.82rem;
-            color: #8892A8;
-            line-height: 1.55;
+            font-size: 16px;
+            font-weight: 400;
+            color: #cad5e2;
+            line-height: 1.5;
         }
 
-        /* ── Footer ──────────────────────────────────────── */
+        /* ── Footer ──────────────────────────────────── */
         footer {
-            border-top: 1px solid #1E2540;
-            padding: 1.5rem 2rem;
+            border-top: 1px solid #314158;
+            padding: 40px 0 24px;
+            max-width: 1036px;
+            margin: 48px auto 0;
+        }
+
+        .footer-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 960px;
-            margin: 2rem auto 0;
+            margin-bottom: 32px;
+            padding: 0 1rem;
         }
 
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #fff;
+            gap: 0.4rem;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
             text-decoration: none;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
+        .footer-links { display: flex; gap: 16px; }
 
         .footer-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            font-size: 0.8rem;
-            color: #5A6380;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #90a1b9;
             text-decoration: none;
         }
 
-        .footer-link:hover { color: #C8CDD8; }
+        .footer-link:hover { color: #cad5e2; }
 
         .copyright {
             text-align: center;
-            font-size: 0.75rem;
-            color: #3A4060;
-            padding: 1rem 2rem 2rem;
+            font-size: 14px;
+            font-weight: 400;
+            color: #62748e;
+            padding-bottom: 24px;
         }
 
-        /* ── Responsive ──────────────────────────────────── */
+        /* ── Responsive ──────────────────────────────── */
         @media (max-width: 768px) {
+            nav { padding: 0 1rem; }
             .pain-cards, .features-grid { grid-template-columns: 1fr; }
-
-            .hero h1 { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.15rem; }
-
-            nav { padding: 0.75rem 1rem; }
-            .nav-btn { padding: 0.4rem 0.75rem; font-size: 0.8rem; }
-
-            .demo h2, .features-section h2 { font-size: 1.4rem; }
-
-            footer { flex-direction: column; gap: 1rem; }
+            .hero h1 { font-size: 32px; }
+            .hero-subtitle { font-size: 20px; }
+            .hero-desc { font-size: 16px; }
+            .demo h2 { font-size: 24px; }
+            .features-section h2 { font-size: 28px; }
+            .pain-card { min-height: auto; }
+            .footer-top { flex-direction: column; gap: 16px; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-actions { gap: 0.4rem; }
+            .hero h1 { font-size: 28px; }
+            .nav-logo { font-size: 20px; }
+            .btn { height: 44px; font-size: 14px; padding: 0 16px; }
         }
     </style>
 </head>
 <body>
 
-<!-- ── Nav ────────────────────────────────────────────── -->
+<!-- ── Nav ────────────────────────────────────────── -->
 <nav>
     <a href="/" class="nav-logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         ClawFleet
     </a>
     <div class="nav-actions">
@@ -466,117 +448,121 @@
     </div>
 </nav>
 
-<!-- ── Hero ───────────────────────────────────────────── -->
-<section class="hero section">
+<!-- ── Hero ───────────────────────────────────────── -->
+<section class="hero wrap">
     <div class="badge">Coming Soon</div>
     <h1>ClawFleet</h1>
     <p class="hero-subtitle">Your AI bots collaborate like a team. Self-hosted. Free.</p>
     <p class="hero-desc">An AI company on your Mac — managed from your browser. No subscription. No cloud. No config hell.</p>
     <div class="hero-cta">
         <a href="https://github.com/weiyong1024/ClawFleet" class="btn btn-white">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             Star on GitHub
         </a>
         <a href="https://discord.gg/b5ZSRyrqbt" class="btn btn-outline">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
             Join Discord
         </a>
     </div>
 </section>
 
-<!-- ── Pain Point Cards ──────────────────────────────── -->
-<div class="pain-cards">
+<!-- ── Pain Point Cards ──────────────────────────── -->
+<div class="pain-cards wrap">
     <div class="pain-card">
-        <div class="pain-icon pain-icon-yellow">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="pain-card-icon ic-yellow">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
-        <h3 class="c-yellow">Stop paying monthly fees for XXXClaw.</h3>
+        <h3>Stop paying monthly fees for XXXClaw.</h3>
         <p>$20/month SaaS subscriptions, per bot. Use your own API key. Pay only for what you use.</p>
     </div>
     <div class="pain-card">
-        <div class="pain-icon pain-icon-green">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="pain-card-icon ic-green">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3 class="c-green">Your private files don't belong on someone else's server.</h3>
+        <h3>Your private files don't belong on someone else's server.</h3>
         <p>SaaS sees your chats, files, and financial data. ClawFleet keeps everything on your disk.</p>
     </div>
     <div class="pain-card">
-        <div class="pain-icon pain-icon-red">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <div class="pain-card-icon ic-red">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </div>
-        <h3 class="c-red">Self-hosting OpenClaw shouldn't be a nightmare.</h3>
+        <h3>Self-hosting OpenClaw shouldn't be a nightmare.</h3>
         <p>53 config files, 70+ dependencies, breaking changes every week. ClawFleet wraps each bot in its own Docker container — isolated, stable, auto-managed.</p>
     </div>
 </div>
 
-<!-- ── Demo: Dashboard ───────────────────────────────── -->
-<section class="demo section section-wide">
-    <div class="demo-icon">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+<!-- ── Demo: Dashboard ───────────────────────────── -->
+<section class="demo wrap">
+    <div class="demo-icon ic-blue">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
     </div>
     <h2>Manage your entire fleet from a browser.</h2>
     <p class="demo-desc">Each bot runs in its own Docker container — isolated environments, independent resources, zero conflicts. Start, stop, and configure everything with point-and-click.</p>
     <div class="demo-frame">
         <img src="/demo-dashboard.png" alt="ClawFleet Dashboard: 6 AI bot instances running in isolated Docker containers, each with independent CPU/memory monitoring">
+    </div>
+    <div class="demo-caption-wrap">
         <div class="demo-caption">ClawFleet Dashboard: 6 AI bot instances running in isolated Docker containers, each with independent CPU/memory monitoring</div>
     </div>
 </section>
 
-<!-- ── Demo: Bot Collaboration ────────────────────────── -->
-<section class="demo section section-wide">
-    <div class="demo-icon">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<!-- ── Demo: Bot Collaboration ────────────────────── -->
+<section class="demo wrap">
+    <div class="demo-icon ic-purple">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
     </div>
     <h2>Your bots talk and collaborate.</h2>
     <p class="demo-desc">SaaS gives you one bot. ClawFleet gives you an AI company — bots that @ each other in Discord, divide tasks, and report back.</p>
     <div class="demo-frame">
         <img src="/demo-discord.jpeg" alt="Discord: AI bots collaborating — Engineer, Product Manager, and Marketer discussing and dividing tasks automatically">
+    </div>
+    <div class="demo-caption-wrap">
         <div class="demo-caption">Discord: AI bots collaborating — Engineer, Product Manager, and Marketer discussing and dividing tasks automatically</div>
     </div>
 </section>
 
-<!-- ── Feature Tiles ──────────────────────────────────── -->
-<section class="features-section section">
+<!-- ── Feature Tiles ──────────────────────────────── -->
+<section class="features-section wrap">
     <h2>Built for the OpenClaw ecosystem.</h2>
     <div class="features-grid">
         <div class="tile">
-            <div class="tile-icon tile-icon-yellow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div class="tile-icon ic-blue">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
             <h3>No SaaS Subscription</h3>
             <p>Your own API key. Pay per token, not per month.</p>
         </div>
         <div class="tile">
-            <div class="tile-icon tile-icon-green">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="tile-icon ic-green">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3>Your Data Stays Local</h3>
             <p>Conversations, memories, files — all on your disk. No third party.</p>
         </div>
         <div class="tile">
-            <div class="tile-icon tile-icon-blue">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <div class="tile-icon ic-purple">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <h3>Browser Dashboard</h3>
             <p>No CLI, no config files. Point-and-click fleet management.</p>
         </div>
         <div class="tile">
-            <div class="tile-icon tile-icon-orange">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <div class="tile-icon ic-yellow">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <h3>Always On</h3>
             <p>Your Mac is online, your AI fleet is working. 24/7.</p>
         </div>
         <div class="tile">
-            <div class="tile-icon tile-icon-red">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <div class="tile-icon ic-red">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
             </div>
             <h3>Docker Isolation</h3>
             <p>Each bot in its own container. No dependency conflicts, no version chaos.</p>
         </div>
         <div class="tile">
-            <div class="tile-icon tile-icon-purple">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="tile-icon ic-orange">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <h3>Bot Collaboration</h3>
             <p>Bots @ each other in Discord. Research, code, review — automatically.</p>
@@ -584,21 +570,23 @@
     </div>
 </section>
 
-<!-- ── Footer ────────────────────────────────────────── -->
+<!-- ── Footer ────────────────────────────────────── -->
 <footer>
-    <a href="/" class="footer-logo">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        ClawFleet
-    </a>
-    <div class="footer-links">
-        <a href="https://github.com/weiyong1024/ClawFleet" class="footer-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
+    <div class="footer-top">
+        <a href="/" class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            ClawFleet
         </a>
-        <a href="https://discord.gg/b5ZSRyrqbt" class="footer-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
-            Discord
-        </a>
+        <div class="footer-links">
+            <a href="https://github.com/weiyong1024/ClawFleet" class="footer-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+            </a>
+            <a href="https://discord.gg/b5ZSRyrqbt" class="footer-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                Discord
+            </a>
+        </div>
     </div>
 </footer>
 <div class="copyright">&copy; 2026 ClawFleet. Self-hosted AI bot management.</div>
